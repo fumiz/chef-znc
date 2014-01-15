@@ -1,0 +1,30 @@
+Version = 1.2
+<Listener l>
+    Port = <%= node['znc']['port'] %>
+    IPv4 = true
+    IPv6 = false
+    SSL = false
+</Listener>
+
+<% node['znc']['users'].each do |user| %>
+<User <%= user['user_name'] %>>
+    Admin      = <%= user['admin'] %>
+    Nick       = <%= user['nick'] %>
+    AltNick    = <%= user['alt_nick'] %>
+    Ident      = <%= user['ident'] %>
+    RealName   = <%= user['real_name'] %>
+    Buffer     = <%= user['buffer'] %>
+    AutoClearChanBuffer = <%= user["auto_clear_channel_buffer"] %>
+    ChanModes  = <%= user["channel_modes"] %>
+    Server     = <%= user["server"] %>
+    <Pass password>
+        Method = <%= user['password']['method'] %>
+        Hash   = <%= user['password']['hash'] %>
+        Salt   = <%= user['password']['salt'] %>
+    </Pass>
+    <% user['channels'].each do |channel| %>
+    <Chan <%= channel['name'] %>>
+    </Chan>
+    <% end %>
+</User>
+<% end %>

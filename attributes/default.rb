@@ -1,0 +1,17 @@
+default["znc"]["port"] = "1025"
+default["znc"]["users"] = [{}]
+default["znc"]["users"][0]["user_name"] = "znc_user"
+default["znc"]["users"][0]["admin"] = "true"
+default["znc"]["users"][0]["nick"] = "znc_test"
+default["znc"]["users"][0]["alt_nick"] = "znc_test_"
+default["znc"]["users"][0]["ident"] = "znc_test"
+default["znc"]["users"][0]["real_name"] = "znc_test"
+default["znc"]["users"][0]["buffer"] = "50"
+default["znc"]["users"][0]["auto_clear_channel_buffer"] = "true"
+default["znc"]["users"][0]["channel_modes"] = "+stn"
+default["znc"]["users"][0]["server"] = ""
+default["znc"]["users"][0]["password"] = {}
+default["znc"]["users"][0]["password"]["method"] = "sha256"
+default["znc"]["users"][0]["password"]["hash"] = ""
+default["znc"]["users"][0]["password"]["salt"] = ""
+default["anc"]["users"][0]["channels"] = []
